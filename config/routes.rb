@@ -34,4 +34,8 @@ Rails.application.routes.draw do
 
   get("/modify_director/:path_id", { :controller => "directors", :action => "update" })
 
+  get("/user_sign_in", { :controller => "application", :action => "sign_in"})
+
+  get("/user_sign_up", { :controller => "application", :action => "sign_up"})
+
 end
