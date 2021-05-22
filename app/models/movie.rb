@@ -6,7 +6,6 @@
 #  description :text
 #  duration    :integer
 #  image       :string
-#  title       :string
 #  year        :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
@@ -23,6 +22,5 @@ class Movie < ApplicationRecord
   #   return the_director
   # end
 
-   belongs_to(:director, { :foreign_key => "director_id", :class_name => "Director" })
-
+  belongs_to(:director, { :foreign_key => "director_id", :class_name => "Director" })
 end
