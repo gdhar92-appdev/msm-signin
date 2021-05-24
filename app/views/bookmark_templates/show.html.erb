@@ -27,13 +27,13 @@
   <% @the_user.bookmarks.each do |a_bookmark| %>
     <tr>
       <td>
-        <%= a_bookmark.movie.title %>
+        <a href="/movies/<%= a_bookmark.movie.id %>"> <%= a_bookmark.movie.title %> </a>
       </td>
       <td>
-        <%= a_bookmark.created_at %>
+        <%= time_ago_in_words(a_bookmark.created_at) %> ago
       </td>
       <td>
-        <a href="">Un-bookmark</a>
+        <a href="/delete_bookmark/<%= a_bookmark.id %>">Un-bookmark</a>
       </td>
     </tr>
   <% end %>

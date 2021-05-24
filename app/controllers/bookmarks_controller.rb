@@ -18,4 +18,15 @@ class BookmarksController < ApplicationController
     redirect_to("/bookmarks")
   end
 
+  def delete_record
+    the_id = params.fetch("bookmark_id").to_i
+
+    the_bookmark = Bookmark.where({ :id => the_id }).at(0)
+
+    the_bookmark.destroy
+    
+    redirect_to("/bookmarks")
+    
+  end
+
 end

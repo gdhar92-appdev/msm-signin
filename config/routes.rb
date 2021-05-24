@@ -47,4 +47,6 @@ Rails.application.routes.draw do
   get("/user_sign_out", { :controller => "users", :action => "sign_out"})
 
   post("/insert_bookmark", { :controller => "bookmarks", :action => "create"})  
+
+  get("/delete_bookmark/:bookmark_id", { :controller => "bookmarks", :action => "delete_record"})
 end
