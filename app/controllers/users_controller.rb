@@ -28,4 +28,23 @@ class UsersController < ApplicationController
     
   end
 
+  def authenticate
+    
+    user_email = params.fetch("input_email")
+    pw = params.fetch("input_password")
+
+    the_user = User.where({:email => user_email}).at(0)
+
+    if the_user == nil
+      redirect_to("/user_sign_in", {:alert => "Username does not exist"})
+    else
+      if the_user.authenticate(pw)
+        session.store(:user_id, the_user.id)
+        redirect_to("/")
+      else
+        redirect_to("/user_sign_in", {:alert => "Incorrect Password"})
+      end
+    end
+  end
+
 end
