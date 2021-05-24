@@ -43,4 +43,8 @@ Rails.application.routes.draw do
   post("/verify_credentials", { :controller => "users", :action => "authenticate"})
 
   get("/bookmarks", { :controller => "bookmarks", :action => "show"})
+
+  get("/user_sign_out", { :controller => "users", :action => "sign_out"})
+
+  post("/insert_bookmark", { :controller => "bookmarks", :action => "create"})  
 end

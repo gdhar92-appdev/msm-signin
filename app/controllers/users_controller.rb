@@ -47,4 +47,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def sign_out
+    reset_session
+    redirect_to("/")
+  end
+
 end

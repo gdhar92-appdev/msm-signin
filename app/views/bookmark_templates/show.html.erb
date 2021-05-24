@@ -1,5 +1,20 @@
 <h1><%= @the_user.first_name %> <%= @the_user.last_name %>'s bookmarks</h1>
 
+<form action="/insert_bookmark" method="post">
+  <label for="movie_bookmark"></label>
+  
+  <select id="movie_bookmark" name="query_movie_id">
+    <% Bookmark.all.each do |a_bookmark| %>
+      <option value = "<%= a_bookmark.movie_id %>">
+        <%= a_bookmark.movie.title %>
+      </option>
+    <% end %>
+  </select>
+
+  <button>Bookmark this movie!</button>
+
+</form>
+
 <hr>
 
 <table border="1">
@@ -12,7 +27,7 @@
   <% @the_user.bookmarks.each do |a_bookmark| %>
     <tr>
       <td>
-        <%= a_bookmark.movie_id %>
+        <%= a_bookmark.movie.title %>
       </td>
       <td>
         <%= a_bookmark.created_at %>
