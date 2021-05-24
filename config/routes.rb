@@ -41,4 +41,6 @@ Rails.application.routes.draw do
   get("/insert_user_record", { :controller => "users", :action => "create"})
 
   post("/verify_credentials", { :controller => "users", :action => "authenticate"})
+
+  get("/bookmarks", { :controller => "bookmarks", :action => "show"})
 end

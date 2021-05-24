@@ -21,4 +21,10 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  def bookmarks
+    my_user_id = self.id
+    matching_bookmarks = Bookmark.where({ :user_id => my_user_id })
+    return matching_bookmarks
+  end
+
 end
