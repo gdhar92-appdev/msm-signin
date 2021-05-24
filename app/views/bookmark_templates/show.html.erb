@@ -4,14 +4,14 @@
   <label for="movie_bookmark"></label>
   
   <select id="movie_bookmark" name="query_movie_id">
-    <% Bookmark.all.each do |a_bookmark| %>
-      <option value = "<%= a_bookmark.movie_id %>">
-        <%= a_bookmark.movie.title %>
+    <% Movie.all.each do |a_movie| %>
+      <option value = "<%= a_movie.id %>">
+        <%= a_movie.title %>
       </option>
     <% end %>
   </select>
 
-  <button>Bookmark this movie!</button>
+  <button>Bookmark this movie</button>
 
 </form>
 
